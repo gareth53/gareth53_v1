@@ -1,0 +1,60 @@
+{% extends "site.html" %}
+{% load navigation_render %}
+
+{% block title %}{{ this_article.title }} - {{ this_article.category.pages_title|striptags }}{% endblock %}
+
+{% block metaDescription %}Gareth Senior: {{ this_article.title }}{% endblock %}
+
+{% block bodyClass %}{{block.super}} col2 article{% endblock %}
+
+{% if this_article.category %}
+	{% block bodyId %}{{ this_article.category.slug|lower }}{% endblock %}
+{% endif %}
+
+	{% block skip_links %}
+		{{ block.super }}
+		{% ifnotequal this_article.category.slug 'master' %}
+			<a href="/" id="gareth53-link"><span>www.</span>Gareth<span id="titleNo">53</span><span>.co.uk</span></a>
+		{% endifnotequal %}
+	{% endblock skip_links %}
+
+
+	{% block head %}
+		<p id="sitetitle">{{ this_article.category.pages_title|safe }}<span></span></p>
+	{% endblock head %}
+
+
+	{% block primaryNav %}
+		{% navigation_render this_article.category.mainNavigation 'main' %}	
+	{% endblock primaryNav %}
+
+
+{% block content %}
+<div id="col1" class="col">
+<h1>{{ this_article.title }}</h1>
+
+{{ this_article.body_html|safe }}
+
+</div>
+
+{% if this_article.pod_promos %}
+<div id="col2" class="col">
+
+<h3>
+	{% if this_article.pod_promos.headline_link or this_article.pod_promos.article_link %}
+		<a href="{% if this_article.pod_promos.headline_link %}{{ this_article.pod_promos.headline_link }}{% else %}{{ this_article.pod_promos.article_link.get_absolute_url }}{% endif %}">{{ this_article.pod_promos.headline }}</a>
+	{% else %}
+		{{ this_article.pod_promos.headline }}
+	{% endif %}</h3>
+{% autoescape off %}
+{{ this_article.pod_promos.body_html }}
+{% endautoescape %}
+</div>
+{% endif %}
+
+{% endblock %}
+
+	{% block footer %}
+		{% navigation_render this_article.category.footerNavigation 'footer' %}	
+	{% endblock footer %}
+

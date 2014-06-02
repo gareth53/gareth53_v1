@@ -1,0 +1,4 @@
+
+{% for file in files %}
+<script type="text/javascript" src="{{ file }}?{{ cachebust }}"></script>
+{% endfor %}

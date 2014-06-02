@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>500 Internal Server Error</title>
+
+<style type="text/css">
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.2
+http://developer.yahoo.com/yui/fonts/
+*/
+body {font:13px/1.231 helvetica,arial,clean,sans-serif;*font-size:small;*font:x-small;color:#333;}
+table {font-size:inherit;font:100%;}
+pre,code,kbd,samp,tt {font-family:monospace;*font-size:108%;line-height:100%;}
+/* http://developer.yahoo.com/yui/reset/ */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+input,textarea,select{*font-size:100%;}
+/*because legend doesn't inherit in IE */
+legend{color:#000;} 
+
+body {
+   background: #333;
+   color:000;
+}
+p.skip_container {
+    left:0pt;
+    position:absolute;
+    top:0pt;
+    width:100%;
+    z-index:40;
+}
+p.skip_container a {
+    color:#FFFFFF;
+    display:block;
+    font-weight:bold;
+    padding:12px;
+    text-decoration:none;
+    text-indent:-300em;
+}
+p.skip_container a:focus,
+p.skip_container a:active {
+    text-indent: 0;
+    text-decoration: underline;
+    background-color: #0090b1;
+    border-bottom: 2px solid #FFF;
+}
+
+/* PAGE STRUCTURES */
+#sitetitle {
+    color:#e9e9e9;
+    text-transform:lowercase;
+    font-size:554%;
+    letter-spacing:-.08em;
+    margin:0.2em 0pt 0.1em 0.4em;
+    padding:0;}
+#sitetitle span { position:absolute; text-indent:-9999em}
+#sitetitle span#titleNo { position:none; text-indent:0; color:#e08d4b;}
+
+#page {
+    width:924px;
+    margin-left:-500px;
+    position:absolute;
+    left:50%;
+}
+
+#content {
+    clear:left;
+    margin:8px 0 8px 0;
+    float:left;
+    overflow:hidden;
+}
+.col {
+    background-color:#fff;
+    padding:22px;
+    margin:0 8px -9999px 0;
+    width:256px;
+    float:left;
+    padding-bottom:9999px;
+}
+body.col2 div#col1 {
+    width:556px;
+    min-height:25em;
+}
+body.col2 div#col2, body div#col3 {
+    margin-right:0;
+}
+
+/* NAVIGATION */
+#nav-main {
+    margin-right:8px;
+    background-color:#2f2b39;
+    color:#e9e9e9;
+    border-bottom: 4px solid #e08d4b;
+}
+#nav-main li.first-child {
+    margin-left:10px;
+}
+#nav-main li.last-child {
+    float:none;
+}
+#nav-main li {
+    font-size:138.5%;
+    float:left;
+    list-style:none;
+    display:block;
+    padding: .5em 0 .35em;
+}
+#nav-main a {
+    color:#e9e9e9; text-decoration:none;
+    padding:.6em 12px .4em;
+    }
+#nav-main a:link {  background: transparent url(../img/sprite.gif) repeat-x 0 0; }
+#nav-main a:visited {  background: transparent url(../img/sprite.gif) repeat-x 0 0; }
+#nav-main a:hover { background-color:#e9e9e9; color:#333; }
+#nav-main a:active { background: transparent url(../img/sprite.gif) repeat-x 0 0; }
+#nav-main a:focus { color:#000; background-color: #e9e9e9 ; }
+
+
+#nav-footer {
+    clear:left;
+    margin:0 8px 0 0;
+    background-color:#2f2b39;
+    color:#e9e9e9;
+    border-top: 4px solid #e08d4b;
+    padding:1em 0;
+    text-transform:lowercase;
+    margin-bottom:2.5em;
+}
+#nav-footer li.first-child {
+    margin-left:15px; }
+#nav-footer li {
+    display:inline;
+    margin:.5em;
+    color:#e9e9e9;
+}
+#nav-footer a:link,
+#nav-footer a:visited { color:#e9e9e9; text-decoration:none; }
+#nav-footer a:hover { color:#fff; text-decoration:underline; }
+#nav-footer a:active,
+#nav-footer a:focus { color:#333; background-color:#e9e9e9; text-decoration:none; }
+
+h1,.body h2 { font-size:153.9%; margin: 0 0 0.8em;}
+h2,.body h3 { font-size:146.5%; }
+
+p { font-size:93%; }
+
+h1,h2,h3,h4,h5,h6,pre,code,p,blockquote{padding-bottom:1em;}
+
+
+</style>
+
+</head>
+<body class="col2" id="error500">
+
+<p class="skip_container"><a href="#content">Skip to Content</a></p>
+
+<div id="page">
+	
+	<p id="sitetitle">Gareth<span id="titleNo">53</span><span>.co.uk - the online home of Gareth Senior</span></p>
+
+	<ul id="nav-main">
+		<li class=" first-child"><a href="/">Home</a></li>
+		<li class=""><a href="/podcast/">Podcast</a></li>
+		<li class=""><a href="/blog/">Blog</a></li>
+		<li class=" last-child"><a href="/about-me.html">About Me</a></li>
+	</ul>	
+
+	<div id="content">
+	
+
+
+
+<div class="col" id="col1">
+	
+<h1>500 Internal Server Error</h1>
+
+		<p>Aaaaaaaaaaargh!!!!!!!</p>
+		<p>What did you do!? What did you touch!?</p>
+		<p>It just broke off in your hand did it? I don't believe that for a second.</p>
+		<p>You are in BIG trouble mister</p>
+		<p>You realise, of course, that all breakages must be paid for?</p>
+		<p>I am SOOO telling your mum about this. You little vandal.</p>
+
+</div>
+
+<div class="col" id="col2">
+	
+<h2>A 500 What?</h2>
+<p>In techie-speak:</p>
+<p>
+"The Web server encountered an unexpected condition that prevented it from fulfilling the request by the client (e.g. your Web browser) for access to the requested URL.
+</p>
+<p>
+This is a 'catch-all' error generated by the Web server. Basically something has gone wrong, but the server can not be more specific about the error condition in its response to the client."
+</p>
+<p>
+	Probably not your fault - don't worry about it. Go about your business.
+	</p>
+
+</ul>
+
+</div>
+
+
+	</div>
+
+	
+	
+<ul id="nav-footer">
+	<li class="first-child"><a href="/">Home</a></li>
+	<li class="last-child">mail me at <a href="mailto:gareth53@hotmail.com">gareth53@hotmail.com</a></li>
+</ul>	
+		
+	
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-527902-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>

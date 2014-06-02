@@ -1,0 +1,3 @@
+Maintainer: "Gareth Senior <gareth53@gmail.com>"
+Description: "etree - ET loader"
+Depends: python-celementtree

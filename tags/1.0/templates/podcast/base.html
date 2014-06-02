@@ -1,0 +1,41 @@
+{% extends "site.html" %}
+{% load navigation_render %}
+
+{% block title %}The Nick Peters &amp; Gareth Senior Podcast{% endblock %}
+
+{% block metaDescription %}Our podcast, in which we play obscure music, tell stories and chuckle drunkenly{% endblock %}
+
+{% block metaKeywords %}nick peters, gareth senior, podcast, music, indie, pop{% endblock %}
+
+{% block rssFeeds %}
+<link rel="alternate" type="application/rss+xml" title="The Nick and Gareth Podcast - Latest Episodes" href="/podcast/podcast-feed.xml">
+{% endblock %}
+
+{% block bodyId %}podcast{% endblock %}
+{% block bodyClass %}{{block.super}} col2{% endblock %}
+
+{% block cssIncludes %}
+<link media="screen" type="text/css" rel="stylesheet" href="/assets/css/core.css">
+<link media="screen" type="text/css" rel="stylesheet" href="/assets/css/podcast.css">
+{% endblock %}
+
+{% block skip_links %}
+	{{ block.super }}
+	<a href="/" id="gareth53-link"><span>www.</span>Gareth<span id="titleNo">53</span><span>.co.uk</span></a>
+{% endblock skip_links %}
+
+{% block head %}
+	<p id="sitetitle"><span>The Nick Peters &amp; Gareth Senior Podcast</span></p>
+{% endblock head %}
+
+{% block primaryNav %}
+	{% navigation_render 'podcast-main' 'main' %}	
+{% endblock primaryNav %}
+
+
+
+
+
+{% block footer %}
+	{% navigation_render 'podcast-footer' 'footer' %}	
+{% endblock %}

@@ -1,0 +1,195 @@
+
+- BLG RECORDING THE PODCAST
+- BLOG SVN
+- BLOG REMOVING .PYC FILES RECURSIVELEY (PLUS SVN IGNORE)
+- BLOG FANTASTIC MR. FOX
+- BLOG COMPRESSION OF ASSET FILES
+
+- MICROFORMATS - FOR HCARD & HATOM: HTTP://MICROFORMATS.ORG/WIKI/HATOM
+- NAV UPSTATES & ROLLOVERS
+
+- COMBINED ASSETS APPLICATION TO PORT FROM GUSTO
+
+- BLOG COMMENTING
+	- form errors
+	- FORM ERRORS COL2
+	- CLIENT SIDE ERROR HANDLING
+	- THANK YOU REDIRECT
+	- COMMENT NUMBERS
+	- COMMENT SPEECH MARKS 
+	- TEST
+	- COPY COMMENTS FROM BLOGSPOT
+
+- XML IMPORTER (and mapping to a model)
+	- IMPORTING TWITTER UPDATES
+	- LAST.FM IMPORTER
+	- FLICKR IMPORTER
+	- DELICIOUS IMPORTER (investigate open source)
+	- IMPORT FROM RSS (blogger)
+
+- CRON JOBS
+
+- LIGHTBOX JS FOR FLICKR IMAGES
+
+- LAST.FM PAGE & HOMEPAGE WIDGET (using album a/w)
+- 
+
+
+GENERIC FEED APP
+--------------------------------------
+
+XML/JSON FEEDS ONLY
+-------------------
+
+OBJECT ATTRIBUTES
+- FEED URL
+- FEED FORMAT
+- MODEL TO MAP TO
+- XPATH TO MODEL ATTRIBUTE MAPS
+or
+- JSON ATTRIBUTES TO MODEL ATTRIBUTES
+and/or
+- HARD-CODED ATTRIBUTES (LIKE A SOURCE FOR EG)
+- MODEL ATTRIBUTE LIMITS (max_length=X)
+- (IF MODEL MAP IS A FOREIGN KEY WE NEED THE FOREIGNKEY ATTRIBUTE TO MATCH AGAINST)
+- 'DE-DUPE' CRITERIA (core data?)
+- 'OVERWRITE IF NOT PRESENT' DATA (secondary data?)
+- FREQUENCY TO CHECK FEED (IN UITS OF 10 MINS PERHAPS?)
+- FEED OWNER (WE'LL USE THIS TO FLAG PROBLEMS, EITHER VIA EMAIL OR ADMIN DASHBOARD)
+
+
+ENHANCEMENTS
+
+1) FOREIGNKEYS
+IN THE CASE OF A SINGLE FEED CREATING DATA IN SEVERAL MODELS...
+WE JUST NEED TO TWEAK THE THOUGHT PROCESSES
+RUN THE FEED IMPORTER THREE TIMES (IN THE CASE OF LASTFM - FIRST FOR ARTISTS, 2ND FOR ALBUMS, 3RD FOR TRACKS)
+BUT! WE KEEP THE FEED IN LOCAL MEMORY WITH EACH IMPORT - NO RE-RETRIEVING OF THE FEED
+WE JUST KEEP THIS DATA IN MIND FOR EACH CRON RUN
+
+2) ADVANCED DATA STRUCTURES
+COMBINING FEED DATA INTO A SINGLE MODEL ATTRIBUTE(?)
+SO SOME KIND FO REGEXP SUPPORT
+
+3) INTROSPECTION OF MODELS TO FIND MAX_LENGTH FOR EG
+
+4) CONVERTING DIRTY DATES INTO DATE OBJECTS 
+string processing - ugh!
+
+5) DETAILED REPORTS
+
+6) AUTO-TAGGING
+SEARCHING FOR STRINGS IN DATA
+
+
+
+
+- PODCAST: ARTIST DIRECTORY. (LIMIT ARTIST LISTINGS TO THOSE ARTISTS THAT HAVE 'BEEN PLAYED')
+- PODCAST BLOG - PULLING ENTRY STUBS FROM "TWITCHING...", GARETHS' BLOG (with certain tags) and ALL POSTS FROM THE 'old' BLOG
+
+PROBABLY NEED TO DE-COUPLE THE ARTIST FROM THE PODCASTS APP
+Artist Pages (these could include artists that we just mention, along with artists we play)
+* Artist Name
+* wikipedia entry stub (API!), with link
+* official site link
+* track "TITLE" was featured in podcast epsiode X (along with artistY, artistZ, etc)
+* episode cover
+* Buy the album X from Amazon
+* Other Amazon links
+* Album artwork
+* Discog (from last.fm?)
+
+BLOG
+- BLOG DATE WIDGET (A LA BLOGSPOT)
+- COMMENTING
+
+
+
+ON THE BLOG APP
+
+YEAR / MONTH NAVIGATION
+=======================
+
+blog sidemenus:
+- latest posts DONE
+- categories DONE (need numbering)
+- years / months ?
+- individual posts (by AJAX request)
+
+so...
+we request the blog posts.
+we order them by date.
+we loop through them counting years/months starting from the year/month of the latest post.
+we return year objects which contain: YEAR, no_of_posts
+
+
+XFM SCROBBLER
+A PAGE THAT
+
+* makes you log-in to last.fm
+* plays Xfm London
+* gets the track playing
+* scrobbles it
+* a 'love' button
+* a 'disable scrobbling button' for that 'away from pooter' effect.
+* add download links to amazon
+* displays last.fm artist bio
+* displays artist photo
+* download from iTunes
+
+
+
+
+
+
+
+
+
+
+
+
+Amazon API
+-----------
+affiliate code in amazon links
+
+
+
+
+have a flashy navigation
+
+
+
+
+
+RIGHT COLUMN
+============
+Need some default right columns that I can integrate into the articles application.
+Include in right column:
+
+these are HTML modules:
+- about me DONE
+- flickr JS DONE
+- twitter JS DONE
+- latest bookmarks (delicious? Or a separate app?)
+
+these are application includes (not sure how we're gonna do them, it's a post-launch thing....)
+- latest blog posts
+- latest podcasts
+
+
+PODCAST APP
+===========
+
+PODCAST MODELS/EPISODES
+
+ADD Podcast CHANNEL Model:
+
+title
+link
+image-url
+summary
+author
+email contact
+category
+
+

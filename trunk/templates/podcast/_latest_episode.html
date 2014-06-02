@@ -1,0 +1,13 @@
+	<div id="podhome-latest" class="col-row">
+		<h2>Latest Episode</h2>
+		<h3><a href="{{ latest.get_absolute_url }}">'{{ latest.title }}'</a></h3>
+		<p>
+			{{ latest.subtitle }}
+		</p>
+		<p>
+			Features:
+		</p>
+		<ul>
+			{% for x in latest.get_artists %}<li>{{ x }}</li>{% endfor %}
+		</ul>
+	</div>

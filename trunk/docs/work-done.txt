@@ -1,0 +1,274 @@
+##########################
+# DONE
+#########################
+
+20.10.09
+additions to artist casing
+- LoOp
+- The xx
+- ESG
+
+additions to artist casing
+- ist
+
+12.05.09 - CREATE A RELEASE TAG (SVN)
+
+13.05.09 - CLEAN UP THE NEED FOR A 'VARIOUS' ARTIST ??
+			- make the sql db (for releases) accept null values for artist
+			- set all those track & album objects that have a foreignkey to artist to null
+			- delete the various artist
+			- in the admin.py ensure that a null value is displayed as 'various'
+			- adjust the help_text on the model
+
+11.05.09 -  pagination for blog home / categories / dates
+
+
+TODO BEFORE SWITCHING DOMAIN NAME (Feb 09)
+
+- archive all local versions
+- SET ASIDE SETTINGS.PY (with SVN IGNORE)
+- set up local dev version that works
+- investigate broken urls (articles)
+- install app to handle redirects
+- had to update django FROM revision 9692 to 10114
+- redirects content
+- tiny mce - headings interface
+- redirects content - podcast files
+- gareth53 link on podcast pages
+- what is current gareth53 domain fallback?
+- change podcast urls
+- setup new static server on webfaction using "/podcast/" ouch! this will kaibosh the django urls
+- set up "/static/" application
+- note the old way of include podcast tracks is flawed
+- switch domain-name over
+- include gareth53 link on podcast stuff
+- fix skip link
+- ie6 bug on homepage
+- sidebar - bad way of numbering
+- fix broken image ref in podcast feed
+- include gareth53 link on articles that don't have a 'master' class
+- spaceless in doctitlE
+- new posts from blogspot
+- more blog posts on blog home
+- broken blog category admin
+- podcast h2 links in sidebar
+- podcast h2s in main column, padding top
+- clean up the old way of including podcast tracks
+- old podcast artists are displayed in the admin list
+- old podcast artists are used on the homepage
+- post links from blogspot - done first half
+
+- year & month pages return 500
+- 500 error page needs to be two column
+- year & month pages - research get_list-or_404 and order_by
+- update dev db with live data
+- create dmigration for tracklisting objects
+- podcast list in main column? on the links page?
+- ???? blog! seattle, svn, bond
+- fix "view on site" buttons for all, but blogposts in first instance
+- get_absolute_url method for blog categories
+- blog: a camp
+
+- solve hard coded enclosure length in podcast feed
+	- add 'time' to the episode model
+	- add filesize to the episode model
+	- use the timeify and untimeify utils.
+	
+TODO FOR LAUNCH
+================
+
+SUNDAY
+- blog rss DONE 18/01/09
+- blog category rss DONE 18/01/09
+- podcast feed DONE  18/01/09 xcept need a track size/length somehow
+- need to link to the rss feed in the head of the doc.  DONE 18/01/09
+- episode images DONE 18/01/09
+- need to link to the rss feed on the page - footer maybe, or dedicated article? ARTICLE WRITTEN 19/01/09 Needs RSS help links
+
+
+MONDAY
+- article right column html module chooser EDITED MIGRATION 19/01/09
+- podcast articles (adding a section to articles) DONE, NOT CHECKED 19/01/09
+- podcast > episode image_description is required, please make not - tweak the migration DONE 19/01/09
+- update content migrations for podcast episodes DONE 19/01/09
+- research best way to back up a mysql database DONE 19/01/09
+- back up database, scrub database, test migrations DONE 19/01/09
+- need to insert data for contrib.auth.User DONE 19/01/09
+
+dmigrations issues:
+* -- verbose problem
+* creating an insert for contrib.sites site
+* creating an insert, manytomany values are not created
+
+
+
+TUESDAY
+- navigation migration DONE 20/01/09
+- article categories admin DONE 20/01/09
+- jquery goodness. DONE 20/01/09
+- make the gareth53 two-colours. DONE 20/01/09
+- make textareas bigger in admin DONE 20/01/09
+- make textfields wider DONE 20/01/09
+- 404 error page DONE 20/01/09
+- 500 error page DONE 20/01/09
+
+
+
+WEDNESDAY
+
+
+THURSDAY
+
+
+FRIDAY
+- document date conventions DONE 23.01.08
+- articles urls to be ported into base urls, and do away with the namespace DONE 23.01.08
+
+SUNDAY 
+- add module includes for article pages DONE 25.01.09
+- remove hard-coded domain references DONE 25.01.09
+- article template to include pods DONE 25.01.09
+- use media links off gareth53.co.uk DONE 25.01.09
+- admin pages - do a custom js to show the image, rather than the path DONE 25.01.09
+
+
+MONDAY
+- restrict to 3 column markup DONE 26.01.09
+- styles for articles / blog posts / blog lists DONE 26.01.09
+- check article template styles DONE 26.01.09
+
+TUESDAY
+- a link class "rss" - apply with jquery? DONE 27.01.09
+- inline flash player for media link DONE 27.01.09
+
+
+WEDNESDAY
+?
+
+THURSDAY
+- navigation _ on list page< display links (in order)
+- m4a links for podcast episode
+- keywords toggler jquery
+- firefox blog post has no paragraphs!
+- can't edit body html for blog entries
+
+FRIDAY
+- podcast styles DONE 30.01.09
+- document other resources
+- jscript error re: player
+- blog year pages - titles
+- blog month pages - titles
+
+
+- CROSS BROWSER TESTING
+	- ff2 osx done
+	- safari done
+	- opera done (glitchy on podcast home)
+
+SUNDAY 8 Feb
+- jscript conflict re show/hide & player
+- ie testing DONE
+- flickr JS DONE
+- articles shoud pick up category titling and styling
+- document podcast styles
+- refactor css to use the ie technique & simplify ie css
+- elsewhere on the web module DONE
+
+FRIDAY 13 FEB
+- incorporate last.fm widget
+- about this site page
+
+
+write these:
+  - about us podcast page
+  - what is podcasting?
+  - about me module
+  - about me page
+
+
+
+- strip html from page titles for articles
+- force category slug for articles (but not for the 'master' cat)
+- javascript for keywords broken?
+- hide title for podcast
+- about podcasting side col
+- about us side col
+- updated insert migratons
+- set up svn repo
+
+
+- investgate execuable rights on manage.py
+- chmod manage.py
+
+
+
+*****************************
+* STUFF WHAT I'VE DONE!
+*****************************
+
+episode title is too short (up from 30 to 50) DONE 11/01/08
+install dmigrations DONE! 11/01/08
+configure dmigrations to create the database and populate it with a base of content DONE! 11/01/08
+podcast template - use official url if wikipedia url not there, link to google search if not DONE 17.01.09
+content migrations DONE 17.01.09
+albums list view - display artist DONE
+tracks list view - pull in year from related release if no year exists, apply useful filters DONE 17.01.09
+podcast navigation (header & footer) DONE
+on episodes list page, list featured artists, also short names for episode_number and season_number DONE 17.01.09
+tie author into the users table DONE 17.01.09
+add image alt value DONE 17.01.09
+admin notes and ordering DONE
+homepage DONE
+episode pages DONE
+Podcast secondary keywords needs bigger-ness (admin) DONE 11.01.08
+
+
+Tagging/Categories DONE!
+migrate to mySQL DONE
+install mysql drivers DONE
+Install Python Imaging Library DONE?
+
+
+NAVIGATION
+===========
+
+An app that allows me to create navigational elements:
+
+text
+link
+include in header
+include in footer
+
+MODELS DONE!
+JUST NEED TO GET THE DATA - PASS IT TO THE TEMPLATES VIA THE VIEWS
+
+
+
+
+Design ideas:
+-------------
+Clean, typography only
+grey to white fade
+wood grain (rough-sawn, dark wood)
+2001: A Space Odyssey
+B-NET
+blurred photography
+sky down to grass, footer on an earthy background
+
+
+
+ARTICLES - done!
+========
+
+basic articles app
+to do the "about" "rss" "this site" "updates"
+those kind of pages.....
+DONE! 10 Oct 2008
+
+
+
+GRID - done!
+======
+I want a grid!
+3 cols - 3 x 300, with a 10px gutter, so 920px in total.
+DONE!

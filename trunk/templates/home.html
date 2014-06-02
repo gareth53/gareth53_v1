@@ -1,0 +1,63 @@
+{% extends "site.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block metaDescription %}Gareth Senior's blog: Recent posts: {% for post in latest_posts %}'{{post.title}}'{% if not last %}, {% endif %}{%endfor%}{% endblock %}
+
+{% block bodyClass %}{{block.super}} col3{% endblock %}
+
+	{% block head %}
+		<!-- site title should be an h1 on the homepage, and a paragrpah on subsequent pages -->
+		<h1 id="sitetitle">Gareth<span id="titleNo">53</span><span>.co.uk - the online home of Gareth Senior</span></h1>
+	{% endblock head %}
+
+{% block bodyId %}homepage{% endblock %}
+
+{% block content %}
+
+
+
+<div class="col" id="col1">
+	
+<h2>Latest Blog Posts</h2>
+{% include "blog/_post_fragment_list.html" %}
+<p><a class="more" href="/blog/">More blogs</a></p>
+</div>
+
+<div class="col" id="col2">
+	
+<h2>Latest Podcast Episodes</h2>
+
+<ul class="podcast_list">
+{% for episode in pods %}
+	<li>
+		<h3><a href="/podcast/episode{{ episode.season_number }}-{{ episode.episode_number }}.html">Episode {{ episode.episode_number }} - {{ episode.title }}</a></h3>
+		<a href="/podcast/episode{{ episode.season_number }}-{{ episode.episode_number }}.html"><img src="/assets/{{episode.cover_image}}" alt="episode 7 artwork, a pastiche of The Jesus And Mary Chain imagery"></a>
+		<p>{{ episode.description }}</p>
+	</li>
+{% endfor %}
+</ul>
+<p><a class="more" href="/podcast/">More episodes</a></p>
+</div>
+
+<div class="col" id="col3">
+
+	<div class="col-row" id="pod-flickr">
+		<h2>Latest flickr photos</h2>
+	<!--script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=s&amp;layout=v&amp;source=user&amp;user=40517523@N00"></script-->
+	</div>
+
+	<div class="col-row" id="pod-twitter">
+		<h2>Playlist</h2>
+	    <p>
+	        <a href="http://www.last.fm/user/gareth53/" class="lastfm-profile-link">www.last.fm/user/gareth53/</a>        
+	    </p>
+
+	</div>
+
+</div>
+
+
+
+
+{% endblock %}

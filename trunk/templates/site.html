@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load navigation_render %}
+{% load css_include %}
+	
+{% block metaKeywords %}gareth senior{% endblock %}
+{% block metaDescription %}This is the online home of Gareth Senior, a web developer based in London, UK{% endblock %}
+
+{% block cssIncludes %}
+
+{% css_include %}
+
+<link media="print" type="text/css" rel="stylesheet" href="/assets/css/print.css">
+{% endblock %}
+
+
+{% block htmlBody %}
+
+<p id="skip_container">
+{% block skip_links %}
+<a href="#content">Skip to Content</a>
+{% endblock %}
+</p>
+
+<div id="page">
+	{% block head %}
+		<!-- site title should be an h1 on the homepage, and a paragrpah on subsequent pages -->
+		<p id="sitetitle">Gareth<span id="titleNo">53</span><span>.co.uk</span><span> - the online home of Gareth Senior</span></p>
+	{% endblock head %}
+
+	{% block primaryNav %}
+
+	{% navigation_render 'main' 'main' %}	
+	
+	{% endblock primaryNav %}
+
+	<div id="content">
+	{% block content %}{% endblock %}
+	</div>
+
+	{% block footer %}
+	
+		{% navigation_render 'footer' 'footer' %}	
+		
+	{% endblock %}
+</div>
+
+{% endblock htmlBody %}

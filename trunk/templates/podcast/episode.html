@@ -1,0 +1,86 @@
+{% extends "podcast/base.html" %}
+
+
+{% block title %}Podcast: Season {{ this_episode.season_number }}, Episode {{ this_episode.episode_number }}: '{{ this_episode.title }}' by Nick Peters &amp; Gareth Senior{% endblock %}
+
+{% block metaDescription %}{{ this_episode.title }} - {{ this_episode.subtitle }}{% endblock %}
+
+{% block metaKeywords %}nick peters, gareth senior, music, mp3, download, podcast, {{ this_episode.primary_keywords }}{% endblock %}
+
+{% block bodyClass %}{{ block.super }} article podepisode{% endblock %}
+
+{% block content %}
+
+<div class="col" id="col1">
+<h1>{% ifnotequal this_episode.season_number 1 %}Season {{ this_episode.season_number }}, {% endifnotequal %}Episode {{ this_episode.episode_number }} - {{ this_episode.title }}</h1>
+
+<p class="date">{{ this_episode.pub_date|date:"D jS M, Y"}}</p>
+
+	{% if this_episode.media_URL %}<p class="listen"><a href="{{ this_episode.media_URL }}">Listen Now {{ this_episode.number }}</a></p>{% endif %}
+
+<ul class="podcast-links">
+	{% if this_episode.media_URL %}<li><a href="{{ this_episode.media_URL }}">Download episode {{ this_episode.number }}</a> (mp3 format)</li>{% endif %}
+	{% if this_episode.enhanced_media_URL %}<li><a href="{{ this_episode.enhanced_media_URL }}">Download M4A format</a> (enhanced for iTunes!)</li>{% endif %}
+	<li><a href="podcast-feed.xml">Subscribe via RSS</a></li>
+</ul>
+
+{% if this_episode.cover_image %}<img src="/assets/{{ this_episode.cover_image }}" alt="{{ episode.image_description }}" id="artwork">{% endif %}
+
+
+
+
+{% autoescape off %}
+{{ this_episode.body_html }}
+{% endautoescape %}
+<p>
+Here's what we played:
+</p>
+
+
+
+
+<ol class="tracklist">
+	{% for track in tracks %}
+	<li><h2><a href="{% if track.track.artist.wikipedia_URL %}{{ track.track.artist.wikipedia_URL }}{% else %}{% if track.track.artist.official_URL %}{{track.artist.official_URL}}{% else %}http://www.google.co.uk/search?q={{ track.track.artist }}{% endif %}{% endif %}">{{ track.track.artist }}</a> - "{{ track.track.track_title }}"</h2>{% if track.track.album %} (from {% if track.track.album.amazon_URL %}<a href="{{ track.track.album.amazon_URL}}">{% endif %}{{ track.track.album.title }}{% if track.track.album.amazon_URL %}</a>{% endif %}{% if track.track.album.release_year %}, {{ track.track.album.release_year }}{% endif %}){% endif %}</li>
+	{% endfor %}
+</ol>
+
+	
+	
+<h3>Notes &amp; Errata:</h3>
+
+{% autoescape off %}
+{{ this_episode.notes_and_errata }}
+{% endautoescape %}
+
+<h3>Email</h3>
+<p>
+Email us feedback, suggestions, complaints: <a href="mailto:gareth53@gmail.com?subject=podcast%20episode%206">gareth53@gmail.com</a>.
+</p>
+
+<h3>Keywords</h3>
+<p id="keywords_intro">
+Stuff that gets a mention, for our reference, since our memories are so bad, and also for the google juice.
+</p>
+<div id="keywords">
+{% autoescape off %}
+{% if this_episode.primary_keywords %}{{ this_episode.primary_keywords }}, {% endif %}{{ this_episode.secondary_keywords }}
+{% endautoescape %}
+</div>
+
+</div>
+
+<div class="col" id="col2">
+
+<div class="col-row">
+	<h2>Other Episodes</h2>
+	<ul class="episode-links">
+		{% for ep in season_episodes %}
+		<li><span>#{{ep.episode_number}}.</span> {% ifnotequal ep.episode_number this_episode.episode_number %}<a href="episode{{ep.season_number}}-{{ep.episode_number}}.html">{% endifnotequal %}'{{ ep.title }}'{% ifnotequal ep.episode_number this_episode.episode_number %}</a>{% endifnotequal %}</li>
+		{% endfor %}
+	</ul>
+</div>
+
+</div>
+{% endblock content %}
+

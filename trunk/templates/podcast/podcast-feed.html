@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<channel>
+	<title>The Nick &amp; Gareth Podcast</title>
+	<link>http://www.gareth53.co.uk/podcast/</link>
+	<ttl>720</ttl>
+	<language>en-us</language>
+	<copyright></copyright>
+	<image>
+		<url>http://www.gareth53.co.uk/assets/img/podcast/covers/nick-and-gareth-podcast.jpg</url>
+		<title>Nick Peters &amp; Gareth Senior - Music Podcast</title>
+		<link>http://www.gareth53.co.uk/podcast/</link>
+	</image>
+	<itunes:subtitle>It's two men, in a room, playing records and talking about them.</itunes:subtitle>
+	<itunes:author>Gareth Senior, Nick Peters</itunes:author>
+	<itunes:summary>A smattering of classic indie, some alt-country, some loud punk and whatever else takes our fancy really. There's insight and analysis, drunken dewy-eyed nostaligia, swearing and some funny stories.</itunes:summary>
+	<itunes:image href="http://www.gareth53.co.uk/podcast/covers/nick-and-gareth-podcast.jpg"/>
+	<itunes:explicit>yes</itunes:explicit>
+	<description>A smattering of classic indie, some alt-country, some loud punk and whatever else takes our fancy really. There's insight and analysis, drunken dewy-eyed nostaligia, swearing and some funny stories.</description>
+	<itunes:owner>
+		<itunes:name>Nick Peters, Gareth Senior</itunes:name>
+		<itunes:email>gareth53@gmail.com</itunes:email>
+	</itunes:owner>
+	<itunes:category text="Music"/>
+{% for ep in recent_episodes %}
+	<item>
+		<title>Nick And Gareth Podcast - Season {{ ep.season_number }}, Episode {{ ep.episode_number }} - {{ ep.title }}</title>
+		<itunes:subtitle>{{ ep.subtitle }}</itunes:subtitle>
+		<itunes:author>Gareth Senior, Nick Peters</itunes:author>
+		<author>{{ ep.author.email }} ({{ep.author.first_name}} {{ep.author.last_name}})</author>
+		<itunes:explicit>yes</itunes:explicit>
+		<itunes:summary>{{ ep.description }}</itunes:summary>
+		<description>{{ ep.description }}</description>
+		<pubDate>{{ ep.pub_date|date:"D j M Y H:i:s T" }}</pubDate>
+		<enclosure url="{{ ep.media_URL }}" length="{{ ep.download_duration }}" type="audio/mpeg"/>
+		<link>{{ ep.media_URL }}</link>
+		<guid isPermaLink="false">nick-gareth-s{{ ep.season_number }}-e{{ ep.episode_number }}</guid>
+		<itunes:keywords>{% if ep.primary_keywords %}{{ ep.primary_keywords }}{% else %}{%for artist_name in ep.get_artists %}{{ artist_name|lower}}{% if forloop.last%}{% else %} {% endif %}{% endfor %}{% endif %}</itunes:keywords>
+	</item>
+{% endfor %}
+</channel>
+</rss>

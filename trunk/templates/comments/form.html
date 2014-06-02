@@ -1,0 +1,35 @@
+{% load comments i18n %}
+	<form action="{% comment_form_target %}" method="post">
+	  {% for field in form %}
+	    {% if field.is_hidden %}
+	      {{ field }}
+		{% else %}
+			{% if field.errors %}
+			<p class="error">{{ field.name }} is a required field</p>
+			{% endif %}
+	    {% endif %}
+	  {% endfor %}
+{% load comments i18n %}
+	      <p>
+	        <label for="id_name">Name</label>
+			<input type="text" maxlength="50" name="name" id="id_name">
+	      </p>
+	      <p>
+	        <label for="id_email">Email address<span> (will not be displayed)</span></label>
+			<input type="text" id="id_email" name="email">
+	      </p>
+	      <p>
+	        <label for="id_url">URL</label>
+			<input type="text" id="id_url" name="url">
+	      </p>
+	      <p>
+	        <label for="id_comment">Comment<span> (sorry, no HTML)</span></label> <textarea name="comment" cols="40" rows="10" id="id_comment"></textarea>
+	      </p>
+	      <p class="honeypot">
+	        <label for="id_honeypot">If you enter anything in this field your comment will be treated as spam</label>
+			<input type="text" id="id_honeypot" name="honeypot">
+	      </p>
+	  <p class="submit">
+	    <button type="submit" name="post" class="submit-post" value="{% trans "Post" %}">Submit</button>
+	  </p>
+	</form>

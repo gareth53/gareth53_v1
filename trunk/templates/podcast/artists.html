@@ -1,0 +1,35 @@
+{% extends "podcast/base.html" %}
+{% load latest_episode %}
+
+{% block title %}Podcast: All Artists{% endblock %}
+
+{% block metaDescription %}Al the artists we've played in our podcast{% endblock %}
+
+{% block metaKeywords %}nick peters, gareth senior, music, mp3, download, podcast{% endblock %}
+
+{% block bodyClass %}{{ block.super }} article podepisode{% endblock %}
+
+{% block content %}
+
+<div class="col" id="col1">
+<h1>Artists</h1>
+
+<p>
+	All the artists we've ever played in the podcast (with links to wikipedia for your convenience):
+	
+</p>
+<ul class="artist-list">
+{% for artist in artists %}
+	<li>{% if artist.wikipedia_URL %}<a href="{{ artist.wikipedia_URL }}">{{ artist.name }}</a>{% else %}{{ artist.name }}{% endif %}</li>
+{% endfor %}
+</ul>
+<p>We are not responsible for the content of external links. Or broken links. Or global poverty.</p>
+</div>
+
+<div class="col" id="col2">
+
+	{% latest_episode %}	
+
+</div>
+{% endblock content %}
+

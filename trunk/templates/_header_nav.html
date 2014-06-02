@@ -1,0 +1,4 @@
+
+{% for nav in navlinks %}
+	<li class="{% if forloop.first %}first-child{% endif %}{%ifequal section upState %} up{% endifequal %}{% if forloop.last %}last-child{% endif %}"><a href="{{nav.link}}">{{nav.text}}</a></li>
+{% endfor %}

@@ -1,0 +1,27 @@
+{% extends "podcast/base.html" %}
+{% load latest_episode %}
+
+{% block bodyClass %}{{ block.super}} podhome{% endblock %}
+
+{% block content %}
+
+<div class="col" id="col1">
+<h1>The Nick &amp; Gareth Podcast - Recent episodes</h1>
+
+<ul id="summary">
+{% for episode in recent_episodes %}
+	<li><a href="episode{{ episode.season_number }}-{{ episode.episode_number }}.html"><img src="/assets/{{episode.cover_image}}" alt="{{episode.image_description}}"></a>
+		<h2><a href="episode{{ episode.season_number }}-{{ episode.episode_number }}.html">Episode {{ episode.episode_number }} - {{ episode.title }}</a></h2>
+		<p class="date">{{ episode.pub_date|date:"j F Y" }}</p>		
+		<p>Featuring: {% for artist_name in episode.get_artists %}{% if forloop.last %} and {{ artist_name }}{% else %}{{ artist_name }}, {% endif %}{% endfor %}.</p>
+	</li>
+{% endfor %}
+</ul>
+
+</div>
+
+<div class="col" id="col2">
+	{% latest_episode %}
+</div>
+
+{% endblock %}

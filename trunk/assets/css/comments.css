@@ -1,0 +1,40 @@
+.comments {
+    margin-top:2.5em;
+}
+body.article #col1 ol.commentlist {
+    border-top:1px solid #999;
+    list-style-type:none;
+    margin-bottom:1em;
+}
+body.article #col1 .comments ol.commentlist li {
+    list-style-position:inside;
+    list-style-type:none;
+    border-bottom:1px solid #999;
+    padding:1em 0;
+    margin:0;
+}
+.commentlist li strong {
+    font-weight:bold;
+}
+
+div.form p label {
+    float:left;
+    clear:left;
+    width:150px;
+    text-align:right;
+    margin-right:5px;
+}
+div.form p input,
+div.form p textarea {
+    padding:;
+    font-size:;
+    width:300px;
+}
+div.form p.submit {
+    margin-left:155px;
+    margin-bottom:2em;
+}
+div.form p.honeypot {
+    display:none;
+}
+

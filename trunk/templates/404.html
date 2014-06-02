@@ -1,0 +1,39 @@
+{% extends "site.html" %}
+
+{% block title %}404 Page Not Found{% endblock %}
+
+{% block metaDescription %}
+
+Sadly, this page could not be found.
+
+{% endblock %}
+
+{% block bodyClass %}col2{% endblock %}
+
+{% block content %}
+<div id="col1" class="col">
+<h1>404 - Page Not Found</h1>
+
+<p>
+	Uh-oh. Something went wrong. This URL just doesn't exist
+</p>
+<p>
+	 {{ request_path }}
+</p>
+<p>
+	Bummer eh? If you're deadly certain that this URL worked before, the drop me a mail and harangue me. Email <a href="mailto:gareth53@gmail.com">gareth53@gmail.com</a>.
+</p>
+<p>
+	Apologies for the inconvenience...
+</p>
+
+</div>
+
+<div id="col2" class="col">
+<h2>Say what techie-dude?</h2>
+	<p>Here's how a 404 response code is officially described:</p>
+	<p>"The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."</p>
+	
+</div>
+
+{% endblock %}

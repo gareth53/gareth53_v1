@@ -1,0 +1,177 @@
+
+- BLOG SVN
+- BLOG MYSQL
+- BLOG REMOVING .PYC FILES RECURSIVELEY (PLUS SVN IGNORE)
+- BLOG CASING APP
+- BLOG FANTASY FITBA
+
+- CREATE A RELEASE TAG (SVN)
+
+- MICROFORMATS - FOR HCARD & HATOM: HTTP://MICROFORMATS.ORG/WIKI/HATOM
+- NAV UPSTATES & ROLLOVERS
+
+- CREATE A TEMPLATETAG TO INCLUDE JS/CSS FILES FOR MINIFIED & COMBINED JS / CSS
+
+- XML IMPORTER (and mapping to a model)
+	- IMPORTING TWITTER UPDATES
+	- LAST.FM IMPORTER
+	- FLICKR IMPORTER
+	- DELICIOUS IMPORTER (investigate open source)
+	- IMPORT FROM RSS (blogger)
+
+- CRON JOBS
+
+- LIGHTBOX JS FOR FLICKR IMAGES
+- LAST.FM PAGE & HOMEPAGE WIDGET (using album a/w)
+
+- PODCAST: ARTIST DIRECTORY. (LIMIT ARTIST LISTINGS TO THOSE ARTISTS THAT HAVE 'BEEN PLAYED')
+- PODCAST BLOG - PULLING ENTRY STUBS FROM "TWITCHING...", GARETHS' BLOG (with certain tags) and ALL POSTS FROM THE 'old' BLOG
+
+PROBABLY NEED TO DE-COUPLE THE ARTIST FROM THE PODCASTS APP
+Artist Pages (these could include artists that we just mention, along with artists we play)
+* Artist Name
+* wikipedia entry stub (API!), with link
+* official site link
+* track "TITLE" was featured in podcast epsiode X (along with artistY, artistZ, etc)
+* episode cover
+* Buy the album X from Amazon
+* Other Amazon links
+* Album artwork
+* Discog (from last.fm?)
+
+BLOG
+- BLOG DATE WIDGET (A LA BLOGSPOT)
+- COMMENTING
+
+
+
+ON THE BLOG APP
+
+YEAR / MONTH NAVIGATION
+=======================
+
+blog sidemenus:
+- latest posts DONE
+- categories DONE (need numbering)
+- years / months ?
+- individual posts (by AJAX request)
+
+so...
+we request the blog posts.
+we order them by date.
+we loop through them counting years/months starting from the year/month of the latest post.
+we return year objects which contain: YEAR, no_of_posts
+
+
+XFM SCROBBLER
+A PAGE THAT
+
+* makes you log-in to last.fm
+* plays Xfm London
+* gets the track playing
+* scrobbles it
+* a 'love' button
+* a 'disable scrobbling button' for that 'away from pooter' effect.
+* add download links to amazon
+* displays last.fm artist bio
+* displays artist photo
+* download from iTunes
+
+
+
+
+
+
+
+
+
+
+
+
+Amazon API
+-----------
+affiliate code in amazon links
+
+
+
+
+have a flashy navigation
+
+
+
+episode title is too short (up from 30 to 50) DONE 11/01/08
+install dmigrations DONE! 11/01/08
+configure dmigrations to create the database and populate it with a base of content DONE! 11/01/08
+podcast template - use official url if wikipedia url not there, link to google search if not DONE 17.01.09
+content migrations DONE 17.01.09
+albums list view - display artist DONE
+tracks list view - pull in year from related release if no year exists, apply useful filters DONE 17.01.09
+podcast navigation (header & footer) DONE
+on episodes list page, list featured artists, also short names for episode_number and season_number DONE 17.01.09
+tie author into the users table DONE 17.01.09
+add image alt value DONE 17.01.09
+admin notes and ordering DONE
+homepage DONE
+episode pages DONE
+Podcast secondary keywords needs bigger-ness (admin) DONE 11.01.08
+
+install TinyMCE DONE 28/12/08
+
+date format on blog pages
+3:25pm, 12 Jan 2008 DONE
+
+
+
+RIGHT COLUMN
+============
+Need some default right columns that I can integrate into the articles application.
+Include in right column:
+
+these are HTML modules:
+- about me DONE
+- flickr JS DONE
+- twitter JS DONE
+- latest bookmarks (delicious? Or a separate app?)
+
+these are application includes (not sure how we're gonna do them, it's a post-launch thing....)
+- latest blog posts
+- latest podcasts
+
+
+
+COMMENTING APP.
+===============
+which requests:
+* name
+* email address
+* URL
+* message 
+* date
+
+and, admin side
+* live
+* relationship with the 'page' perhaps by URL?
+
+plug in to blogs & podcast episodes allows:
+
+* allow commenting
+* allow commenting until
+
+
+
+PODCAST APP
+===========
+
+PODCAST MODELS/EPISODES
+
+ADD Podcast CHANNEL Model:
+
+title
+link
+image-url
+summary
+author
+email contact
+category
+
+

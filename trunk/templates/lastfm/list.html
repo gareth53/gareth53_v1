@@ -1,0 +1,63 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Last.fm Scrobbles{% endblock %}
+
+{% block metaDescription %}Gareth Senior's tunes what he has listened to{% endblock %}
+
+{% block bodyClass %}{{block.super}} col2{% endblock %}
+
+{% block content %}
+
+<div class="col" id="col1">
+<h1>
+    Scrobbles
+</h1>
+<p>
+Scrobbles to last.fm under the username <strong>{{ user.lastfm_username }}</strong>
+</p>
+<ul class="lastfm">
+	{% for t in scrobbles %}
+	<li><span class="date">{{ t.date_time|date:"m:h D d/m/y" }}</span><h2>{{ t.track.artist.name }} - "{{ t.track.track_title }}"</h2>{% if t.track.album.title %}<span class="release"> from "{{ t.track.album.title }}"</span> {% endif %}</li>
+	{% endfor %}
+</ul>
+
+
+
+</div>
+
+<div class="col" id="col2">
+<h2>More about {{ user.lastfm_username }}<h2>
+<ul>
+	<li><a href="">full profile</a><li>
+	<li>X scrobbles so far</li>
+</ul>
+Most listened to artists this week:
+	<ul>
+	 	<li>favourite artists</li>
+ 		<li>favourite albums</li>
+ 		<li>total scrobbles</li>
+ 		<li>total scrobbles</li>
+ 		<li>total scrobbles</li>
+	</ul>
+Most listened to albums
+	<ul>
+	 	<li>favourite artists</li>
+ 		<li>favourite albums</li>
+ 		<li>total scrobbles</li>
+ 		<li>total scrobbles</li>
+ 		<li>total scrobbles</li>
+	</ul>
+Other LastFM users:
+	<ul>
+		{% for other_user in all_users %}
+		 	{% ifequal other_user.lastfm_username user.lastfm_username %}
+			<li>{{ other_user.lastfm_username}}</li>
+			{% else %}
+			<li><a href="/lastfm/{{ other_user.lastfm_username}}.html">{{ other_user.lastfm_username}}</a></li>
+			{% endifequal %}
+		{% endfor %}
+	</ul>
+
+</div>
+
+{% endblock %}

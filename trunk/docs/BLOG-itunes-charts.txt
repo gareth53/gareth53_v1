@@ -1,0 +1,90 @@
+How The iTunes Charts Work
+
+"The Charts" have always been important to the music industry. In the old days the charts were announced once a week and based on actual sales i.e. somebody physically walking into a shop and buying a single. So whichever single sold most in a given seven days was "The Number One" for the next seven days.
+
+The chart that is announced on Radio 1 on a Sunday evening is still based on this premise - although, since 1st January 2007, it includes digital purchases.
+
+Since iTunes has become the biggest retailer of music, the importance of the official Singles Chart has taken a nosedive. iTunes own charts have become just as important, if not more so.
+
+But iTunes charts are much more complex. They're a rolling chart for a start. Apple haven't published any information about how their charts work, but it's my rough guess that they're based on a set of algorithms that both represent public tastes and present a chart with a similar level of stability to the official chart.
+
+iTunes also has access to a much more rich set of statistics than purely sales. Not only can songs be downloaded, single releases can be rated and reviewed in the iTunes store. Added to which, remember that iTunes is an application for listening to and managing music as well as a retailer.
+
+So here's breakdown of iTunes activities that may, or may not, affect the chart position of a song, album, movie, application or podcast channel.
+
+Downloads
+You'd expect the most important element affecting a chart position in iTunes is the download figures. Me too. Especially for song and album charts. Podcast charts are more complicated. Speaking of which...
+
+Subscriptions
+Podcast charts are charts of podcast channels, not episodes. The success of a podcast channel can be measured using the number of downloads and/or the number of subscribers. Attracting new subscribers is a key indicator of chart success - new podcast channels that have a high visibility (i.e. a BBC Radio podcast, or just a big name attached to it) tend to chart highly and then gradually slip down the chart. Established podcasts with a high subscriber base tend to dominate the chart, even if a new episode hasn't appeared in a while. 
+
+Plays
+Tracks managed in iTunes have a "play count"  - a count that is updated when the related iPod is synced with the app. PLays *could* be used as a metric in the charts, but there's a host of privacy issues involved here. If you're using the iTunes Genius feature your play counts are being processed to find new music that "you might like". It's doubtful whether play counts are communicated back to Apple and influence the charts. The Genius feature is, of course, influencing shopping habits, so it will indirectly affect chart performance by guiding new purchases. I wouldn't rule out data of this kind affecting charts in the future though. It seems to be the best measure of popularity. Of course, it might open the doors to chart rigging.
+
+Reviews & Ratings
+Do ratings affect iTunes chart performance? They could. I doubt they do since most ratings tend to be the full 5 stars - people aren't motivated to make a reasoned evaluation of a song or podcast channel and provide a genuine rating. It's the superfans that are motivated to provide a rating (see the YouTube). Reviews and ratings do influence other users to buy/subscribe, so they do, indirectly, affect chart performance.
+
+The Editorial Affect
+Apple has full power of veto over any and all podcasts, iPhone applications audio tracks and video content. Added to which, the front end of the iTunes store "features" "new" and "notable" stuff. Which must then influence subscriptions and downloads.
+
+The Smoothing Algorithm
+I mentioned earlier that iTunes aim to "present a chart with a similar level of stability to the official chart". It's incredibly unlikely that downloads/sales/subscriptions directly and immediately affect the charts. These aren't "live" charts. For them to be a successful guide of influencing public taste and selling more stuff (which, for the naive amongst you, is the entire reason these charts exist) they need that social element. So User A saying to User B "have you seen who's top of the iTunes chart?" has to be a likely scenario and has to have a satisfying follow-thru. So if User B goes to look at the chart as a result of a conversation the track in question has to be either still at number 1 or thereabouts.
+
+The charts are updated regularly but each chart probably represents a bigger window than the period since the last update. A likely scenario might be that a chart is updated every hour, based on activity over the last 48 hours. Sudden spikes in sales won't immediately affect charts, but that affect will gradually come to light. The iTunes charts don't have the sudden volatility of the Radio 1 Chart (or Network Chart) where the number one track is more often than not a new release, but they probably have the same amount of change over a seven-day window, because that's the amount of change we, the public, expect.
+
+Additionally, on a technical note, it's probably not a "live" chart because compiling these charts is almost certainly a complex and expensive set of database queries and calculations. Technically, it would make more sense to do a periodical calculation.
+
+
+
+http://www.apple.com/euro/itunes/charts/top10songs.html
+
+http://itunes.apple.com/rss/generator/
+
+UK > Music > Top Songs > 50 > All Genres > Explicit
+
+
+
+http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/sf=143444/limit=50/explicit=true/xml
+app to measure this:
+
+1. requst the XML.
+2. retrieve the lastest chart from the db
+3. compare the datetime in the db, with the datestamp in the feed
+4. If different, create a new Chart object
+5. loop thru the entry objects in the xml, creating Entry objects.
+
+
+if I can get namepsaced XML nodes, retrieve im:artist and im:title
+
+
+class Entry(models.Model):
+	title = models.CharField()
+	position: models.NumberField()
+	chart = models.OneToOneField(Chart)
+
+class Chart(models.Model):
+	updated = models.DateTimeField()
+
+
+
+
+
+20/10/09,15.10
+updated: 2009-10-20T09:08:23-07:00
+what does this mean? October 20 09.08am (in timezone -7h from GMT)
+
+1,Fight for This Love,Cheryl Cole
+2,Bad Boys,Alexandra Burke
+3,Million Dollar Bill,Whitney Houston
+4,Bodies,Robbie Williams
+5,I Gotta Feeling,Black Eyed Peas
+6,Haven't Met You Yet,Michael Bublé
+7,I Got Soul,Young Soul Rebels
+8,Break Your Heart,Taio Cruz
+9,Forever Is Over,The Saturdays
+10,Good Girls Go Bad,Cobra Starship
+
+
+
+
+

@@ -1,0 +1,104 @@
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.2
+http://developer.yahoo.com/yui/fonts/
+*/
+body {font:13px/1.231 helvetica,arial,clean,sans-serif;*font-size:small;*font:x-small;color:#555;}
+table {font-size:inherit;font:100%;}
+pre,code,kbd,samp,tt {font-family:monospace;*font-size:108%;line-height:100%;}
+/* http://developer.yahoo.com/yui/reset/ */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+input,textarea,select{*font-size:100%;}
+/*because legend doesn't inherit in IE */
+legend{color:#000;} 
+
+/* BASIC ELEMENT STYLES */
+/*
+Px     %
+10     77
+11     85
+12     93 (was 93)
+13     100
+14     108 (was 107)
+15     116 (was 114)
+16     123.1 (was 122)
+17     131 (was 129)
+18     138.5 (was 136)
+19     146.5 (was 144)
+20     153.9 (was 152)
+21     161.6 (was 159)
+22     167
+23     174
+24     182
+25     189
+26     197
+*/
+
+p.skip_container a,
+p.skip_container a:hover {
+    position:absolute;
+    left:-9999em;
+    display:block;
+    color:#ffff00;
+    font-weight:bold;
+    padding:.5em 2em;
+    font-size:123.1%;
+    display:block;
+    text-decoration:none;
+    background-color:#000;
+    text-align:left;
+    text-decoration:none;
+    width:100%;
+    z-index:99;
+}
+p.skip_container a:focus,
+p.skip_container a:active {
+    color:#ffff00;
+    left: 0;
+    text-decoration: underline;
+    background-color: #000;
+    border-bottom: 2px solid #FFF;
+}
+
+/* PAGE STRUCTURES */
+
+#page {
+    width:924px;
+    margin-left:-500px;
+    position:absolute;
+    left:50%;
+}
+
+#content {
+    clear:left;
+    float:left;
+}
+
+/* NAVIGATION */
+#nav-footer {
+    clear:left;
+    padding:1em 0;
+    text-transform:lowercase;
+}
+#nav-footer li.first-child {
+    margin-left:15px;
+}
+#nav-footer li {
+    display:inline;
+    margin:.5em;
+}

@@ -1,0 +1,16 @@
+/* IE styleshet, included using conditional comment */
+/* using zom:1 to force hasLayout */
+
+body#homepage ul.podcast_list li,
+ul#nav-footer,
+body#pod ul.episode-links li {
+    zoom:1;
+}
+
+body#podcast .col {
+    _width:118px;
+}
+body#podcast div#content #col1 {
+    _width:426px;
+    _overflow:hidden;
+}

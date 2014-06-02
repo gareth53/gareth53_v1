@@ -1,0 +1,5 @@
+<ul id="nav-{{ position }}">
+	{% for link in navLinks %}
+		<li class="{% if forloop.first %} first-child{% endif %}{% if forloop.last %} last-child{% endif %}"><a href="{{link.link}}">{{ link.text }}</a></li>
+	{% endfor %}
+</ul>
